@@ -1,0 +1,77 @@
+/opt/homebrew/bin/python3.11 /Users/mohammed/phone-checker-bot/bot.py
+/opt/homebrew/bin/python3.11 /Users/mohammed/phone-checker-bot/bot.py
+/opt/homebrew/bin/python3.11 /Users/mohammed/phone-checker-bot/bot.py
+/opt/homebrew/bin/python3.11 /Users/mohammed/phone-checker-bot/bot.py
+/opt/homebrew/bin/python3.11 /Users/mohammed/phone-checker-bot/bot.py
+/opt/homebrew/bin/python3.11 /Users/mohammed/phone-checker-bot/bot.py
+/opt/homebrew/bin/python3.11 /Users/mohammed/phone-checker-bot/bot.py
+import os
+from dotenv import load_dotenv
+from telegram.ext import Application, CommandHandler, MessageHandler, filters
+
+/opt/homebrew/bin/python3.11 /Users/mohammed/phone-checker-bot/bot.py
+# --- our services ---
+from services.twilio_service import lookup_number
+from services.ddg_service import scam_search
+from services.gpt_service import analyze_number
+
+# --- force IPv4 for Telegram API ---
+import httpx
+from telegram.request import HTTPXRequest
+
+# Custom transport with IPv4
+transport = httpx.AsyncHTTPTransport(local_address="0.0.0.0", retries=3)
+
+# Minimal arguments (remove http_versions)
+request = HTTPXRequest(
+    connect_timeout=20,
+    read_timeout=20,
+    write_timeout=20,
+    pool_timeout=20,
+    transport=transport
+)
+
+# --- load environment ---
+load_dotenv()
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+
+# /start command
+async def start(update, context):
+    await update.message.reply_text("👋 Hello! Send me a phone number, I’ll check if it’s spam or safe.")
+
+# handle phone number lookup
+async def check_number(update, context):
+    number = update.message.text.strip()
+    await update.message.reply_text(f"🔍 Checking number: {number} ...")
+
+    # Step 1: Twilio lookup
+    carrier, country = lookup_number(number)
+
+    # Step 2: DuckDuckGo scam search
+    ddg_results = scam_search(number)
+
+    # Step 3: GPT analysis
+    decision = analyze_number(number, carrier, country, ddg_results)
+
+    # Step 4: Reply to user
+    await update.message.reply_text(
+        f"📞 Number: {number}\n"
+        f"🌍 Country: {country}\n"
+        f"📡 Carrier: {carrier}\n\n"
+        f"📰 Scam Reports:\n" + "\n".join(ddg_results[:3]) + "\n\n"
+        f"🤖 AI Analysis:\n{decision}"
+    )
+
+def main():
+    # Init bot with forced IPv4 request client
+    app = Application.builder().token(TELEGRAM_BOT_TOKEN).request(request).build()
+
+    # Register commands
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, check_number))
+
+    print("🚀 Bot is running... Press CTRL+C to stop.")
+    app.run_polling()
+
+if __name__ == "__main__":
+    main()
