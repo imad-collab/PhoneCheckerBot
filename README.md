@@ -21,8 +21,8 @@ OpenAI
 
 ⚙️ Installation
 Clone this repo:
-git clone https://github.com/YOUR_USERNAME/PhoneCheckerBot.git
-cd PhoneCheckerBot
+git [clone https://github.com/YOUR_USERNAME/PhoneCheckerBot.git
+](https://github.com/imad-collab/PhoneCheckerBot/blob/main/README.md)
 
 
 Create virtual environment:
