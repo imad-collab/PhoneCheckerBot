@@ -1,0 +1,22 @@
+[
+  {
+    "number": "+61426964413",
+    "country_code": "+61",
+    "region": "Australia",
+    "carrier": "Optus",
+    "line_type": "Mobile",
+    "sim_user": "Unknown",
+    "spam_status": "✅ Safe",
+    "risk_score": "Low"
+  },
+  {
+    "number": "+61416556319",
+    "country_code": "+61",
+    "region": "Australia",
+    "carrier": "Unknown",
+    "line_type": "Unknown",
+    "sim_user": "Unknown",
+    "spam_status": "⚠️ Scam Likely",
+    "risk_score": "High"
+  }
+]

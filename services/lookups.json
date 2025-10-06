@@ -1,0 +1,124 @@
+[
+  {
+    "number": "+61412345678",
+    "country": "AU",
+    "carrier": null,
+    "spam_status": "\u26a0\ufe0f",
+    "risk_score": "High",
+    "timestamp": "2025-09-20 11:21:15"
+  },
+  {
+    "number": "+61450 556 438",
+    "country": "AU",
+    "carrier": null,
+    "spam_status": "\u26a0\ufe0f",
+    "risk_score": "High",
+    "timestamp": "2025-09-20 11:22:09"
+  },
+  {
+    "number": "+61426648942",
+    "country": "AU",
+    "carrier": "Safe",
+    "spam_status": "\u2705 Safe",
+    "risk_score": "Low"
+  },
+  {
+    "number": "+611800123456",
+    "country": "AU",
+    "carrier": "Safe",
+    "spam_status": "\u2705 Safe",
+    "risk_score": "Low"
+  },
+  {
+    "number": "+61426505529",
+    "country": "AU",
+    "carrier": "Safe",
+    "spam_status": "\u2705 Safe",
+    "risk_score": "Low"
+  },
+  {
+    "number": "+611800731539",
+    "country_code": "AU",
+    "region": "AU",
+    "carrier": "Unknown",
+    "line_type": "Unknown",
+    "sim_user": "Unknown",
+    "spam_status": "\u26a0\ufe0f Unknown",
+    "risk_score": "Medium"
+  },
+  {
+    "number": "+611800731539",
+    "country_code": "Unknown",
+    "region": "Unknown",
+    "carrier": "Unknown",
+    "line_type": "Unknown",
+    "sim_user": "Unknown",
+    "spam_status": "\u26a0\ufe0f Scam Likely",
+    "risk_score": "High"
+  },
+  {
+    "number": "+611800731539",
+    "country_code": "AU",
+    "region": "AU",
+    "carrier": "Unknown",
+    "line_type": "Unknown",
+    "sim_user": "Unknown",
+    "spam_status": "\u26a0\ufe0f Scam Likely",
+    "risk_score": "High"
+  },
+  {
+    "number": "+611800731539",
+    "country": "AU",
+    "carrier": "Unknown",
+    "line_type": "Unknown",
+    "sim_user": "Unknown",
+    "spam_status": "\u26a0\ufe0f Scam Likely",
+    "risk_score": "High"
+  },
+  {
+    "number": "+61404 825 849",
+    "country": "AU",
+    "carrier": "Unknown",
+    "line_type": "Unknown",
+    "sim_user": "Unknown",
+    "spam_status": "\u26a0\ufe0f Scam Likely",
+    "risk_score": "High"
+  },
+  {
+    "number": "+61426505529",
+    "country": "AU",
+    "carrier": "Safe",
+    "spam_status": "\u2705 Safe",
+    "risk_score": "Low"
+  },
+  {
+    "number": "+61406 646 864",
+    "country": "AU",
+    "carrier": "Unknown",
+    "line_type": "Unknown",
+    "sim_user": "Unknown",
+    "spam_status": "\u26a0\ufe0f Scam Likely",
+    "risk_score": "High"
+  },
+  {
+    "number": "+61406646864",
+    "country": "AU",
+    "carrier": "Safe",
+    "spam_status": "\u2705 Safe",
+    "risk_score": "Low"
+  },
+  {
+    "number": "+61478722902",
+    "country": "AU",
+    "carrier": "Safe",
+    "spam_status": "\u2705 Safe",
+    "risk_score": "Low"
+  },
+  {
+    "number": "+61468684941",
+    "country": "AU",
+    "carrier": "Safe",
+    "spam_status": "\u2705 Safe",
+    "risk_score": "Low"
+  }
+]
